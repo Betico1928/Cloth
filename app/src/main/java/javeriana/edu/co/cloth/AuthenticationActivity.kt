@@ -1,5 +1,6 @@
 package javeriana.edu.co.cloth
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +9,7 @@ import javeriana.edu.co.cloth.databinding.ActivityAuthenticationBinding
 
 class AuthenticationActivity : AppCompatActivity()
 {
-    private lateinit var authenticationBinding: ActivityAuthenticationBinding
+    private lateinit var authenticationBinding : ActivityAuthenticationBinding
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -25,10 +26,16 @@ class AuthenticationActivity : AppCompatActivity()
         // Buttons
         authenticationBinding.loginButton.setOnClickListener{
             Log.i("Authentication Activity", "LogIn Button")
+
+            val pasarAlMenuPrincipal = Intent(baseContext, MainMenuActivity::class.java)
+            startActivity(pasarAlMenuPrincipal)
         }
 
         authenticationBinding.registerButton.setOnClickListener {
             Log.i("Authentication Activity", "Register Button")
+
+            val pasarATodoActivity = Intent(baseContext, TODOActivity::class.java)
+            startActivity(pasarATodoActivity)
         }
     }
 }
