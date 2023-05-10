@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFDEF"
     android:padding="15dp"
-    tools:context=".AutenticationActivity">
+    tools:context=".AuthenticationActivity">
 
     <ImageView
         android:id="@+id/logoImageView"
