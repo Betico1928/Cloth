@@ -16,7 +16,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars" >
+    </ImageView>
 
     <TextView
         android:id="@+id/textCity"
@@ -29,7 +30,8 @@
         app:layout_constraintBottom_toTopOf="@+id/textTemperature"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+    </TextView>
 
     <TextView
         android:id="@+id/textTemperature"
@@ -43,7 +45,8 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textCity" />
+        app:layout_constraintTop_toBottomOf="@+id/textCity" >
+    </TextView>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -66,20 +69,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Now" />
+                android:text="Now" >
+            </TextView>
 
             <ImageView
                 android:id="@+id/imageViewToday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/baseline_cloud_queue_24" />
+                app:srcCompat="@drawable/baseline_cloud_queue_24" >
+            </ImageView>
 
             <TextView
                 android:id="@+id/textTodayExplanation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Cloudy" />
+                android:text="Cloudy" >
+            </TextView>
+
         </LinearLayout>
 
         <LinearLayout
@@ -93,20 +100,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Afternoon" />
+                android:text="Afternoon" >
+            </TextView>
 
             <ImageView
                 android:id="@+id/imageViewAfternoon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/baseline_wb_sunny_24" />
+                app:srcCompat="@drawable/baseline_wb_sunny_24" >
+            </ImageView>
 
             <TextView
                 android:id="@+id/textAfternoonExplanation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Sunny" />
+                android:text="Sunny" >
+            </TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -120,20 +130,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Night" />
+                android:text="Night" >
+            </TextView>
 
             <ImageView
                 android:id="@+id/imageViewNight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/baseline_nights_stay_24" />
+                app:srcCompat="@drawable/baseline_nights_stay_24" >
+            </ImageView>
 
             <TextView
                 android:id="@+id/textNightExplanation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Cloudy" />
+                android:text="Cloudy" >
+            </TextView>
         </LinearLayout>
 
         <LinearLayout
@@ -147,20 +160,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Tomorrow" />
+                android:text="Tomorrow" >
+            </TextView>
 
             <ImageView
                 android:id="@+id/imageViewTomorrow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/baseline_water_drop_24" />
+                app:srcCompat="@drawable/baseline_water_drop_24" >
+            </ImageView>
 
             <TextView
                 android:id="@+id/textTomorrowExplanation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Rain drops" />
+                android:text="Rain drops" >
+            </TextView>
+
         </LinearLayout>
 
     </LinearLayout>
@@ -176,7 +193,8 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonAddClothes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" >
+    </Button>
 
     <Button
         android:id="@+id/buttonAddClothes"
@@ -191,7 +209,8 @@
         app:layout_constraintBottom_toTopOf="@+id/textPastOutfits"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRecomendarOutfit" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonRecomendarOutfit" >
+    </Button>
 
 
     <TextView
@@ -206,7 +225,8 @@
         app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAddClothes" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddClothes" >
+    </TextView>
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
@@ -232,7 +252,8 @@
                     android:layout_width="100dp"
                     android:layout_height="240dp"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/outfit_01" />
+                    app:srcCompat="@drawable/outfit_01" >
+                </ImageView>
 
                 <TextView
                     android:id="@+id/textYesterdayOutfit"
@@ -240,7 +261,9 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/lexend_exa"
                     android:gravity="center"
-                    android:text="Yesterday" />
+                    android:text="Yesterday" >
+                </TextView>
+
             </LinearLayout>
 
             <Space
@@ -259,7 +282,8 @@
                     android:layout_width="100dp"
                     android:layout_height="240dp"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/outfit_02" />
+                    app:srcCompat="@drawable/outfit_02" >
+                </ImageView>
 
                 <TextView
                     android:id="@+id/text2DaysAgoOutfit"
@@ -287,7 +311,8 @@
                     android:layout_width="100dp"
                     android:layout_height="240dp"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/outfit_03" />
+                    app:srcCompat="@drawable/outfit_03" >
+                </ImageView>
 
                 <TextView
                     android:id="@+id/text3DaysAgoOutfit"
@@ -315,7 +340,8 @@
                     android:layout_width="100dp"
                     android:layout_height="240dp"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/outfit_04" />
+                    app:srcCompat="@drawable/outfit_04" >
+                </ImageView>
 
                 <TextView
                     android:id="@+id/text4DaysAgoOutfit"
@@ -327,6 +353,35 @@
                 </TextView>
             </LinearLayout>
 
+            <Space
+                android:layout_width="14dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+            </Space>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageOutfit_05"
+                    android:layout_width="100dp"
+                    android:layout_height="240dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/outfit_05" >
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/text1WeekAgoOutfit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_exa"
+                    android:gravity="center"
+                    android:text="1 Week Ago" >
+                </TextView>
+
+            </LinearLayout>
         </LinearLayout>
     </HorizontalScrollView>
 

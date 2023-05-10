@@ -27,15 +27,15 @@ class AuthenticationActivity : AppCompatActivity()
         authenticationBinding.loginButton.setOnClickListener{
             Log.i("Authentication Activity", "LogIn Button")
 
-            val pasarAlMenuPrincipal = Intent(baseContext, MainMenuActivity::class.java)
-            startActivity(pasarAlMenuPrincipal)
+            val goToMainMenu = Intent(baseContext, MainMenuActivity::class.java)
+            startActivity(goToMainMenu)
         }
 
         authenticationBinding.registerButton.setOnClickListener {
             Log.i("Authentication Activity", "Register Button")
 
-            val pasarATodoActivity = Intent(baseContext, TODOActivity::class.java)
-            startActivity(pasarATodoActivity)
+            val goToTodoActivity = Intent(baseContext, TODOActivity::class.java)
+            startActivity(goToTodoActivity)
         }
     }
 }

@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Cloth"
         tools:targetApi="31">
         <activity
+            android:name=".ShowOutfitActivity"
+            android:exported="false" />
+        <activity
             android:name=".TODOActivity"
             android:exported="false" />
         <activity
