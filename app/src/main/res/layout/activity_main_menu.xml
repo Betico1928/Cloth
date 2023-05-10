@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/yesterdayOutfit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFDEF"
@@ -9,26 +10,25 @@
     tools:context=".MainMenuActivity">
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:src="@tools:sample/avatars"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </de.hdodenhof.circleimageview.CircleImageView>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/textCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/lexend_tera"
         android:text="Bogotá D.C"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textTemperature"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -42,7 +42,7 @@
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textCity" />
 
     <LinearLayout
@@ -164,5 +164,171 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonRecomendarOutfit"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lexend_exa"
+        android:text="Recommend Outfit"
+        app:backgroundTint="#6689AE"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAddClothes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/buttonAddClothes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/lexend_exa"
+        android:text="Add Clothes"
+        app:backgroundTint="#203C60"
+        app:layout_constraintBottom_toTopOf="@+id/textPastOutfits"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRecomendarOutfit" />
+
+
+    <TextView
+        android:id="@+id/textPastOutfits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/lexend_tera"
+        android:text="Past Outfits"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddClothes" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPastOutfits">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageOutfit_01"
+                    android:layout_width="100dp"
+                    android:layout_height="240dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/outfit_01" />
+
+                <TextView
+                    android:id="@+id/textYesterdayOutfit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_exa"
+                    android:gravity="center"
+                    android:text="Yesterday" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="14dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+            </Space>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageOutfit_02"
+                    android:layout_width="100dp"
+                    android:layout_height="240dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/outfit_02" />
+
+                <TextView
+                    android:id="@+id/text2DaysAgoOutfit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_exa"
+                    android:gravity="center"
+                    android:text="2 Days Ago" >
+                </TextView>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="14dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+            </Space>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageOutfit_03"
+                    android:layout_width="100dp"
+                    android:layout_height="240dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/outfit_03" />
+
+                <TextView
+                    android:id="@+id/text3DaysAgoOutfit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_exa"
+                    android:gravity="center"
+                    android:text="3 Days Ago" >
+                </TextView>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="14dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+            </Space>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageOutfit_04"
+                    android:layout_width="100dp"
+                    android:layout_height="240dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/outfit_04" />
+
+                <TextView
+                    android:id="@+id/text4DaysAgoOutfit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_exa"
+                    android:gravity="center"
+                    android:text="4 Days Ago" >
+                </TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
