@@ -1,9 +1,8 @@
 package javeriana.edu.co.cloth
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import javeriana.edu.co.cloth.databinding.ActivityShowOutfitBinding
 
 class ShowOutfitActivity : AppCompatActivity()
