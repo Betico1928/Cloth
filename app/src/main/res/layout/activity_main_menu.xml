@@ -9,43 +9,45 @@
     android:padding="15dp"
     tools:context=".MainMenuActivity">
 
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:src="@drawable/profile_picture"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" >
-    </ImageView>
+        app:layout_constraintTop_toTopOf="parent">
+    </de.hdodenhof.circleimageview.CircleImageView>
+
 
     <TextView
         android:id="@+id/textCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:fontFamily="@font/lexend_tera"
         android:text="Bogotá D.C"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textTemperature"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
     </TextView>
 
     <TextView
         android:id="@+id/textTemperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="32dp"
         android:fontFamily="@font/lexend_tera"
         android:text="13 °C"
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textCity" >
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/textCity">
     </TextView>
 
     <LinearLayout
@@ -69,14 +71,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Now" >
+                android:text="Now">
             </TextView>
 
             <ImageView
                 android:id="@+id/imageViewToday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/baseline_cloud_queue_24" >
+                app:srcCompat="@drawable/baseline_cloud_queue_24">
             </ImageView>
 
             <TextView
@@ -84,9 +86,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Cloudy" >
+                android:text="Cloudy">
             </TextView>
-
         </LinearLayout>
 
         <LinearLayout
@@ -100,14 +101,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Afternoon" >
+                android:text="Afternoon">
             </TextView>
 
             <ImageView
                 android:id="@+id/imageViewAfternoon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/baseline_wb_sunny_24" >
+                app:srcCompat="@drawable/baseline_wb_sunny_24">
             </ImageView>
 
             <TextView
@@ -115,7 +116,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Sunny" >
+                android:text="Sunny">
             </TextView>
         </LinearLayout>
 
@@ -130,14 +131,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Night" >
+                android:text="Night">
             </TextView>
 
             <ImageView
                 android:id="@+id/imageViewNight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/baseline_nights_stay_24" >
+                app:srcCompat="@drawable/baseline_nights_stay_24">
             </ImageView>
 
             <TextView
@@ -145,7 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Cloudy" >
+                android:text="Cloudy">
             </TextView>
         </LinearLayout>
 
@@ -160,14 +161,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Tomorrow" >
+                android:text="Tomorrow">
             </TextView>
 
             <ImageView
                 android:id="@+id/imageViewTomorrow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/baseline_water_drop_24" >
+                app:srcCompat="@drawable/baseline_water_drop_24">
             </ImageView>
 
             <TextView
@@ -175,7 +176,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Rain drops" >
+                android:text="Rain drops">
             </TextView>
 
         </LinearLayout>
@@ -185,47 +186,60 @@
     <Button
         android:id="@+id/buttonRecomendarOutfit"
         android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="70dp"
         android:fontFamily="@font/lexend_exa"
         android:text="Recommend Outfit"
         app:backgroundTint="#6689AE"
         app:layout_constraintBottom_toTopOf="@+id/buttonAddClothes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" >
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
     </Button>
 
     <Button
         android:id="@+id/buttonAddClothes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
         android:fontFamily="@font/lexend_exa"
         android:text="Add Clothes"
         app:backgroundTint="#203C60"
         app:layout_constraintBottom_toTopOf="@+id/textPastOutfits"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonClothingCare"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRecomendarOutfit" >
+        app:layout_constraintTop_toBottomOf="@+id/buttonRecomendarOutfit">
     </Button>
 
+
+    <Button
+        android:id="@+id/buttonClothingCare"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/lexend_exa"
+        android:text="Clothing Care"
+        app:backgroundTint="#203C60"
+        app:layout_constraintBottom_toTopOf="@+id/textPastOutfits"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/buttonAddClothes"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRecomendarOutfit">
+    </Button>
 
     <TextView
         android:id="@+id/textPastOutfits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="8dp"
         android:fontFamily="@font/lexend_tera"
         android:text="Past Outfits"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAddClothes" >
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddClothes">
     </TextView>
 
     <HorizontalScrollView
@@ -252,7 +266,7 @@
                     android:layout_width="100dp"
                     android:layout_height="240dp"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/outfit_01" >
+                    app:srcCompat="@drawable/outfit_01">
                 </ImageView>
 
                 <TextView
@@ -261,7 +275,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/lexend_exa"
                     android:gravity="center"
-                    android:text="Yesterday" >
+                    android:text="Yesterday">
                 </TextView>
 
             </LinearLayout>
@@ -269,7 +283,7 @@
             <Space
                 android:layout_width="14dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" >
+                android:layout_weight="1">
             </Space>
 
             <LinearLayout
@@ -282,7 +296,7 @@
                     android:layout_width="100dp"
                     android:layout_height="240dp"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/outfit_02" >
+                    app:srcCompat="@drawable/outfit_02">
                 </ImageView>
 
                 <TextView
@@ -291,14 +305,14 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/lexend_exa"
                     android:gravity="center"
-                    android:text="2 Days Ago" >
+                    android:text="2 Days Ago">
                 </TextView>
             </LinearLayout>
 
             <Space
                 android:layout_width="14dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" >
+                android:layout_weight="1">
             </Space>
 
             <LinearLayout
@@ -311,7 +325,7 @@
                     android:layout_width="100dp"
                     android:layout_height="240dp"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/outfit_03" >
+                    app:srcCompat="@drawable/outfit_03">
                 </ImageView>
 
                 <TextView
@@ -320,14 +334,14 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/lexend_exa"
                     android:gravity="center"
-                    android:text="3 Days Ago" >
+                    android:text="3 Days Ago">
                 </TextView>
             </LinearLayout>
 
             <Space
                 android:layout_width="14dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" >
+                android:layout_weight="1">
             </Space>
 
             <LinearLayout
@@ -340,7 +354,7 @@
                     android:layout_width="100dp"
                     android:layout_height="240dp"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/outfit_04" >
+                    app:srcCompat="@drawable/outfit_04">
                 </ImageView>
 
                 <TextView
@@ -349,14 +363,14 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/lexend_exa"
                     android:gravity="center"
-                    android:text="4 Days Ago" >
+                    android:text="4 Days Ago">
                 </TextView>
             </LinearLayout>
 
             <Space
                 android:layout_width="14dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" >
+                android:layout_weight="1">
             </Space>
 
             <LinearLayout
@@ -369,7 +383,7 @@
                     android:layout_width="100dp"
                     android:layout_height="240dp"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/outfit_05" >
+                    app:srcCompat="@drawable/outfit_05">
                 </ImageView>
 
                 <TextView
@@ -378,12 +392,9 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/lexend_exa"
                     android:gravity="center"
-                    android:text="1 Week Ago" >
+                    android:text="1 Week Ago">
                 </TextView>
-
             </LinearLayout>
         </LinearLayout>
     </HorizontalScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
