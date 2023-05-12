@@ -190,27 +190,26 @@
         android:fontFamily="@font/lexend_exa"
         android:text="Recommend Outfit"
         app:backgroundTint="#6689AE"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAddClothes"
+        app:layout_constraintBottom_toTopOf="@+id/buttonVirtualCloset"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
     </Button>
 
     <Button
-        android:id="@+id/buttonAddClothes"
+        android:id="@+id/buttonVirtualCloset"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
         android:fontFamily="@font/lexend_exa"
-        android:text="Add Clothes"
+        android:text="Virtual Closet"
         app:backgroundTint="#203C60"
         app:layout_constraintBottom_toTopOf="@+id/textPastOutfits"
         app:layout_constraintEnd_toStartOf="@+id/buttonClothingCare"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRecomendarOutfit">
-    </Button>
+        app:layout_constraintTop_toBottomOf="@+id/buttonRecomendarOutfit"></Button>
 
 
     <Button
@@ -225,7 +224,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textPastOutfits"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@+id/buttonAddClothes"
+        app:layout_constraintStart_toEndOf="@+id/buttonVirtualCloset"
         app:layout_constraintTop_toBottomOf="@+id/buttonRecomendarOutfit">
     </Button>
 
@@ -239,7 +238,7 @@
         app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAddClothes">
+        app:layout_constraintTop_toBottomOf="@+id/buttonVirtualCloset">
     </TextView>
 
     <HorizontalScrollView
