@@ -4,6 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFDEF"
+    android:padding="15dp"
     tools:context=".VirtualClosetActivity">
+
+    <Button
+        android:id="@+id/buttonAddClothesFromGallery"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="1dp"
+        android:text="Add Clothes from Gallery"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddClothesFromGallery" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

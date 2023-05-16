@@ -46,6 +46,11 @@ class MainMenuActivity : AppCompatActivity()
             val outfitPath = "outfit_05.jpg"
             openImage(outfitPath)
         }
+
+        mainMenuBinding.buttonVirtualCloset.setOnClickListener {
+            val goToVirtualClosetActivity = Intent(baseContext, VirtualClosetActivity::class.java)
+            startActivity(goToVirtualClosetActivity)
+        }
     }
 
     private fun openImage(outfitPath : String)
