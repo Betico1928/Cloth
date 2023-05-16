@@ -4,6 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFDEF"
+    android:padding="15dp"
     tools:context=".ClothingCareActivity">
 
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="15dp">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="#34FFFFFF"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/algodon" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

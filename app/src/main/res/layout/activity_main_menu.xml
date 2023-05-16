@@ -209,7 +209,8 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonClothingCare"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRecomendarOutfit"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/buttonRecomendarOutfit">
+    </Button>
 
 
     <Button
