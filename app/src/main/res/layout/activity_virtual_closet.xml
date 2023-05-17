@@ -13,6 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:text="Add Clothes from Gallery"
+        app:backgroundTint="#6689AE"
         app:layout_constraintBottom_toTopOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,11 +32,11 @@
         android:id="@+id/mlLocationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/lexend_exa"
         android:text="ML Location (debug):"
         app:layout_constraintBottom_toTopOf="@+id/mlCategoryText"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deleteClothButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
@@ -48,7 +49,7 @@
         android:fontFamily="@font/lexend_exa"
         android:text="Category:"
         app:layout_constraintBottom_toTopOf="@+id/mlScoreText"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deleteClothButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mlLocationText" />
@@ -58,13 +59,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
         android:fontFamily="@font/lexend_exa"
         android:text="Score (debug):"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deleteClothButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mlCategoryText" />
+
+    <Button
+        android:id="@+id/saveClothButton"
+        android:layout_width="126dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:text="Save Cloth"
+        app:backgroundTint="#203C60"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deleteClothButton" />
+
+    <Button
+        android:id="@+id/deleteClothButton"
+        android:layout_width="126dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:text="Delete Cloth"
+        app:backgroundTint="#203C60"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

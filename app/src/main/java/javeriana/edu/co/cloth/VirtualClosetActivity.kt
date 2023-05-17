@@ -1,5 +1,6 @@
 package javeriana.edu.co.cloth
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
@@ -16,12 +17,14 @@ import javeriana.edu.co.cloth.databinding.ActivityVirtualClosetBinding
 import javeriana.edu.co.cloth.ml.LiteModelSsdMobilenetV11Metadata2
 import org.tensorflow.lite.support.image.TensorImage
 
-class VirtualClosetActivity : AppCompatActivity() {
+class VirtualClosetActivity : AppCompatActivity()
+{
     private lateinit var virtualClosetBinding: ActivityVirtualClosetBinding
 
     private val galleryRequest = registerForActivityResult(ActivityResultContracts.GetContent(), ActivityResultCallback { imagePath: Uri? -> loadImage(imagePath) })
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         virtualClosetBinding = ActivityVirtualClosetBinding.inflate(layoutInflater)
         setContentView(virtualClosetBinding.root)
@@ -29,9 +32,20 @@ class VirtualClosetActivity : AppCompatActivity() {
         initializeElements()
     }
 
-    private fun initializeElements() {
+    private fun initializeElements()
+    {
         virtualClosetBinding.buttonAddClothesFromGallery.setOnClickListener {
             galleryRequest.launch("image/*")
+        }
+
+        virtualClosetBinding.deleteClothButton.setOnClickListener {
+            val goToTODOActivity = Intent(baseContext, TODOActivity::class.java)
+            startActivity(goToTODOActivity)
+        }
+
+        virtualClosetBinding.saveClothButton.setOnClickListener {
+            val goToTODOActivity = Intent(baseContext, TODOActivity::class.java)
+            startActivity(goToTODOActivity)
         }
     }
 
