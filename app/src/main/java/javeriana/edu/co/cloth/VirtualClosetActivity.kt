@@ -1,27 +1,23 @@
 package javeriana.edu.co.cloth
 
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.FileProvider
 import javeriana.edu.co.cloth.databinding.ActivityVirtualClosetBinding
-import java.io.File
+import javeriana.edu.co.cloth.ml.LiteModelSsdMobilenetV11Metadata2
+import org.tensorflow.lite.support.image.TensorImage
 
-class VirtualClosetActivity : AppCompatActivity()
-{
-    private lateinit var virtualClosetBinding : ActivityVirtualClosetBinding
-    // Binding
-    //private lateinit var bindingCamera: ActivityCameraBinding
+class VirtualClosetActivity : AppCompatActivity() {
+    private lateinit var virtualClosetBinding: ActivityVirtualClosetBinding
 
-    // Request Gallery
-    private val galleryRequest = registerForActivityResult(ActivityResultContracts.GetContent(), ActivityResultCallback { imagePath : Uri? -> loadImage(imagePath) })
+    private val galleryRequest = registerForActivityResult(ActivityResultContracts.GetContent(), ActivityResultCallback { imagePath: Uri? -> loadImage(imagePath) })
 
-
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         virtualClosetBinding = ActivityVirtualClosetBinding.inflate(layoutInflater)
         setContentView(virtualClosetBinding.root)
@@ -29,33 +25,42 @@ class VirtualClosetActivity : AppCompatActivity()
         initializeElements()
     }
 
-    private fun initializeElements()
-    {
-        //initializeFileFromCamera()
-
+    private fun initializeElements() {
         virtualClosetBinding.buttonAddClothesFromGallery.setOnClickListener {
-            // Open gallery
             galleryRequest.launch("image/*")
         }
     }
 
-    private fun initializeFileFromCamera()
-    {
-        val fileToLoad = File(filesDir, "fileFromCamera")
-        //cameraPath = FileProvider.getUriForFile( this, applicationContext.packageName + ".fileprovider", fileToLoad)
+    private fun loadImage(imagePath: Uri?) {
+        val imageStream = contentResolver.openInputStream(imagePath!!)
+        val image = BitmapFactory.decodeStream(imageStream)
+
+        predictImage(image)
+
+        virtualClosetBinding.imageView5.setImageBitmap(image)
     }
 
+    private fun predictImage(bitmap: Bitmap) {
+        val model = LiteModelSsdMobilenetV11Metadata2.newInstance(this)
 
+        val image = TensorImage.fromBitmap(bitmap)
 
-    // Load the image in the activity (from gallery or camera)
-    private fun loadImage( imagePath : Uri? )
-    {
-        val imageStream = contentResolver.openInputStream( imagePath!! )
-        val image = BitmapFactory.decodeStream( imageStream )
+        val outputs = model.process(image)
+        val detectionResult = outputs.detectionResultList[0]
 
-        // IMPLEMENTARLO AQUI
+        val location = detectionResult.locationAsRectF
+        val category = detectionResult.categoryAsString
+        val score = detectionResult.scoreAsFloat
 
+        // Aquí puedes usar `location`, `category` y `score` como necesites.
+        // Por ejemplo, puedes imprimirlos en la consola:
+        Toast.makeText(baseContext, "Ubicación: $location", Toast.LENGTH_SHORT).show()
+        Toast.makeText(baseContext, "Categoría: $category", Toast.LENGTH_SHORT).show()
+        Toast.makeText(baseContext, "Puntuación: $score", Toast.LENGTH_SHORT).show()
+        println("Ubicación: $location")
+        println("Categoría: $category")
+        println("Puntuación: $score")
 
-        virtualClosetBinding.imageView5.setImageBitmap( image )
+        model.close()
     }
 }
