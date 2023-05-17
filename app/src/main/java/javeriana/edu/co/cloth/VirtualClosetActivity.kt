@@ -2,6 +2,10 @@ package javeriana.edu.co.cloth
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.RectF
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
@@ -12,14 +16,12 @@ import javeriana.edu.co.cloth.databinding.ActivityVirtualClosetBinding
 import javeriana.edu.co.cloth.ml.LiteModelSsdMobilenetV11Metadata2
 import org.tensorflow.lite.support.image.TensorImage
 
-class VirtualClosetActivity : AppCompatActivity()
-{
+class VirtualClosetActivity : AppCompatActivity() {
     private lateinit var virtualClosetBinding: ActivityVirtualClosetBinding
 
     private val galleryRequest = registerForActivityResult(ActivityResultContracts.GetContent(), ActivityResultCallback { imagePath: Uri? -> loadImage(imagePath) })
 
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         virtualClosetBinding = ActivityVirtualClosetBinding.inflate(layoutInflater)
         setContentView(virtualClosetBinding.root)
@@ -27,25 +29,20 @@ class VirtualClosetActivity : AppCompatActivity()
         initializeElements()
     }
 
-    private fun initializeElements()
-    {
+    private fun initializeElements() {
         virtualClosetBinding.buttonAddClothesFromGallery.setOnClickListener {
             galleryRequest.launch("image/*")
         }
     }
 
-    private fun loadImage(imagePath: Uri?)
-    {
+    private fun loadImage(imagePath: Uri?) {
         val imageStream = contentResolver.openInputStream(imagePath!!)
         val image = BitmapFactory.decodeStream(imageStream)
 
         predictImage(image)
-
-        virtualClosetBinding.imageView5.setImageBitmap(image)
     }
 
-    private fun predictImage(bitmap: Bitmap)
-    {
+    private fun predictImage(bitmap: Bitmap) {
         val model = LiteModelSsdMobilenetV11Metadata2.newInstance(this)
 
         val image = TensorImage.fromBitmap(bitmap)
@@ -56,22 +53,37 @@ class VirtualClosetActivity : AppCompatActivity()
         val location = detectionResult.locationAsRectF
         val category = detectionResult.categoryAsString
         val score = detectionResult.scoreAsFloat
+        val javaClass = detectionResult.javaClass
 
-        // Aquí puedes usar `location`, `category` y `score` como necesites.
-        // Por ejemplo, puedes imprimirlos en la consola:
-
-        //Toast.makeText(baseContext, "Ubicación: $location", Toast.LENGTH_SHORT).show()
-        //Toast.makeText(baseContext, "Categoría: $category", Toast.LENGTH_SHORT).show()
-        //Toast.makeText(baseContext, "Puntuación: $score", Toast.LENGTH_SHORT).show()
+        println("Ubicación: $location")
+        println("Categoría: $category")
+        println("Puntuación: $score")
+        println("Java Class: $javaClass")
 
         virtualClosetBinding.mlLocationText.text = "ML Location (debug): $location"
         virtualClosetBinding.mlCategoryText.text = "Category: $category"
         virtualClosetBinding.mlScoreText.text = "Score (debug): $score"
 
-        println("Ubicación: $location")
-        println("Categoría: $category")
-        println("Puntuación: $score")
+        val bitmapWithLocation = drawLocationOnBitmap(bitmap, location)
+
+        virtualClosetBinding.imageView5.setImageBitmap(bitmapWithLocation)
 
         model.close()
+    }
+
+
+
+    private fun drawLocationOnBitmap(bitmap: Bitmap, location: RectF): Bitmap {
+        val mutableBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true)
+        val canvas = Canvas(mutableBitmap)
+
+        val paint = Paint()
+        paint.color = Color.RED
+        paint.style = Paint.Style.STROKE
+        paint.strokeWidth = 10f
+
+        canvas.drawRect(location, paint)
+
+        return mutableBitmap
     }
 }
