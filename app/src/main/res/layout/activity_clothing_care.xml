@@ -9,9 +9,9 @@
     tools:context=".ClothingCareActivity">
 
     <TextView
-        android:id="@+id/textViewTitulo"
+        android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/lexend_tera"
         android:gravity="center"
         android:text="Clothing Care"
@@ -23,20 +23,20 @@
     </TextView>
 
     <ImageView
-        android:id="@+id/imageViewAlgodon"
+        android:id="@+id/imageViewWool"
         android:layout_width="382dp"
         android:layout_height="120dp"
         android:alpha="0.5"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewLana"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewCotton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
         app:srcCompat="@drawable/algodon"
         android:background="@drawable/rounded_corner"/>
 
     <ImageView
-        android:id="@+id/imageViewLana"
+        android:id="@+id/imageViewCotton"
         android:layout_width="382dp"
         android:layout_height="120dp"
         android:alpha="0.5"
@@ -44,7 +44,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageViewJeans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewAlgodon"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewWool"
         app:srcCompat="@drawable/lana" />
 
     <ImageView
@@ -56,8 +56,8 @@
         app:layout_constraintBottom_toTopOf="@+id/imageViewPoliester"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewLana"
-        app:srcCompat="@drawable/algodon" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewCotton"
+        app:srcCompat="@drawable/jeans" />
 
     <ImageView
         android:id="@+id/imageViewPoliester"
@@ -72,28 +72,28 @@
         app:srcCompat="@drawable/poliester" />
 
     <TextView
-        android:id="@+id/textViewLana"
+        android:id="@+id/textViewWool"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/lexend_exa"
-        android:text="Lana"
+        android:text="Wool"
         android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewAlgodon"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewWool"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageViewAlgodon" />
+        app:layout_constraintTop_toTopOf="@+id/imageViewWool" />
 
     <TextView
-        android:id="@+id/textViewAlgodon"
+        android:id="@+id/textViewCotton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/lexend_exa"
-        android:text="Algodón"
+        android:text="Cotton"
         android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewLana"
-        app:layout_constraintEnd_toEndOf="@+id/imageViewLana"
-        app:layout_constraintStart_toStartOf="@+id/imageViewLana"
-        app:layout_constraintTop_toTopOf="@+id/imageViewLana" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewCotton"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewCotton"
+        app:layout_constraintStart_toStartOf="@+id/imageViewCotton"
+        app:layout_constraintTop_toTopOf="@+id/imageViewCotton" />
 
     <TextView
         android:id="@+id/textViewJeans"
