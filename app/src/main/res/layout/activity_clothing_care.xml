@@ -8,18 +8,114 @@
     android:padding="15dp"
     tools:context=".ClothingCareActivity">
 
-    <RelativeLayout
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="15dp">
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:fontFamily="@font/lexend_tera"
+        android:gravity="center"
+        android:text="Clothing Care"
+        android:textColor="@color/material_dynamic_neutral20"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </TextView>
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:background="#34FFFFFF"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/algodon" />
-    </RelativeLayout>
+    <ImageView
+        android:id="@+id/imageViewAlgodon"
+        android:layout_width="382dp"
+        android:layout_height="120dp"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewLana"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo"
+        app:srcCompat="@drawable/algodon"
+        android:background="@drawable/rounded_corner"/>
+
+    <ImageView
+        android:id="@+id/imageViewLana"
+        android:layout_width="382dp"
+        android:layout_height="120dp"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewJeans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAlgodon"
+        app:srcCompat="@drawable/lana" />
+
+    <ImageView
+        android:id="@+id/imageViewJeans"
+        android:layout_width="382dp"
+        android:layout_height="120dp"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewPoliester"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLana"
+        app:srcCompat="@drawable/algodon" />
+
+    <ImageView
+        android:id="@+id/imageViewPoliester"
+        android:layout_width="382dp"
+        android:layout_height="120dp"
+        android:alpha="0.45"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewJeans"
+        app:srcCompat="@drawable/poliester" />
+
+    <TextView
+        android:id="@+id/textViewLana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_exa"
+        android:text="Lana"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewAlgodon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewAlgodon" />
+
+    <TextView
+        android:id="@+id/textViewAlgodon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_exa"
+        android:text="Algodón"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewLana"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewLana"
+        app:layout_constraintStart_toStartOf="@+id/imageViewLana"
+        app:layout_constraintTop_toTopOf="@+id/imageViewLana" />
+
+    <TextView
+        android:id="@+id/textViewJeans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_exa"
+        android:text="Jeans"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewJeans"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewJeans"
+        app:layout_constraintStart_toStartOf="@+id/imageViewJeans"
+        app:layout_constraintTop_toTopOf="@+id/imageViewJeans" />
+
+    <TextView
+        android:id="@+id/textViewPoliester"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_exa"
+        android:text="Poliester"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewPoliester"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewPoliester"
+        app:layout_constraintStart_toStartOf="@+id/imageViewPoliester"
+        app:layout_constraintTop_toTopOf="@+id/imageViewPoliester" />
 </androidx.constraintlayout.widget.ConstraintLayout>
