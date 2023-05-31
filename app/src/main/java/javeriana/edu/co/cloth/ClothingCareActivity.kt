@@ -25,7 +25,7 @@ class ClothingCareActivity : AppCompatActivity()
     {
         // Wool
         clothingCareBinding.imageViewWool.setOnClickListener {
-            clothType = "wool"
+            clothType = "Wool"
 
             val pasarAClothingCareExtension = Intent(baseContext, ClothingCareExtensionActivity::class.java)
             pasarAClothingCareExtension.putExtra("clothType", clothType)
@@ -33,7 +33,7 @@ class ClothingCareActivity : AppCompatActivity()
         }
 
         clothingCareBinding.textViewWool.setOnClickListener {
-            clothType = "wool"
+            clothType = "Wool"
 
             val pasarAClothingCareExtension = Intent(baseContext, ClothingCareExtensionActivity::class.java)
             pasarAClothingCareExtension.putExtra("clothType", clothType)
@@ -44,7 +44,7 @@ class ClothingCareActivity : AppCompatActivity()
 
         // Cotton
         clothingCareBinding.imageViewCotton.setOnClickListener {
-            clothType = "cotton"
+            clothType = "Cotton"
 
             val pasarAClothingCareExtension = Intent(baseContext, ClothingCareExtensionActivity::class.java)
             pasarAClothingCareExtension.putExtra("clothType", clothType)
@@ -52,7 +52,7 @@ class ClothingCareActivity : AppCompatActivity()
         }
 
         clothingCareBinding.textViewCotton.setOnClickListener {
-            clothType = "cotton"
+            clothType = "Cotton"
 
             val pasarAClothingCareExtension =
                 Intent(baseContext, ClothingCareExtensionActivity::class.java)
@@ -64,7 +64,7 @@ class ClothingCareActivity : AppCompatActivity()
 
         // Jeans
         clothingCareBinding.imageViewJeans.setOnClickListener {
-            clothType = "jeans"
+            clothType = "Jeans"
 
             val pasarAClothingCareExtension =
                 Intent(baseContext, ClothingCareExtensionActivity::class.java)
@@ -73,7 +73,7 @@ class ClothingCareActivity : AppCompatActivity()
         }
 
         clothingCareBinding.textViewJeans.setOnClickListener {
-            clothType = "jeans"
+            clothType = "Jeans"
 
             val pasarAClothingCareExtension =
                 Intent(baseContext, ClothingCareExtensionActivity::class.java)
@@ -85,7 +85,7 @@ class ClothingCareActivity : AppCompatActivity()
 
         // Poliester
         clothingCareBinding.imageViewPoliester.setOnClickListener {
-            clothType = "poliester"
+            clothType = "Poliester"
 
             val pasarAClothingCareExtension =
                 Intent(baseContext, ClothingCareExtensionActivity::class.java)
@@ -94,7 +94,7 @@ class ClothingCareActivity : AppCompatActivity()
         }
 
         clothingCareBinding.textViewPoliester.setOnClickListener {
-            clothType = "poliester"
+            clothType = "Poliester"
 
             val pasarAClothingCareExtension =
                 Intent(baseContext, ClothingCareExtensionActivity::class.java)
