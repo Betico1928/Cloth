@@ -56,6 +56,11 @@ class MainMenuActivity : AppCompatActivity()
             val goToClothingCareActivity = Intent(baseContext, ClothingCareActivity::class.java)
             startActivity(goToClothingCareActivity)
         }
+
+        mainMenuBinding.buttonRecomendarOutfit.setOnClickListener {
+            val goToGenerateOutfitActivity = Intent(baseContext, SplashActivity::class.java)
+            startActivity(goToGenerateOutfitActivity)
+        }
     }
 
     private fun openImage(outfitPath : String)
